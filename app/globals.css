@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background:
+    radial-gradient(circle at top, rgba(139,92,246,0.18), transparent 32%),
+    linear-gradient(180deg, #05060a 0%, #060811 100%);
+  color: #f5f7ff;
+  min-height: 100%;
+}
+
+body {
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-frame {
+  width: 100%;
+  max-width: 460px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+    linear-gradient(180deg, #0a0d16 0%, #080a12 100%);
+  border-left: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.45);
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+}
+
+.signal-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.signal-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 55%);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.sparkline {
+  width: 100%;
+  height: 44px;
+  opacity: 0.92;
+}
+
+.text-fade {
+  color: #9aa0b5;
+}
+
+.purple-ring {
+  box-shadow: 0 0 0 1px rgba(139,92,246,0.22), 0 10px 30px rgba(109,40,217,0.18);
+}
+
+.safe-pb {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+}
