@@ -73,7 +73,8 @@ export function UserProvider({ children }: { children: ReactNode }) {
         try {
           const mod = await import("@farcaster/miniapp-sdk");
           const sdk = mod.sdk;
-          const contextUser = sdk.context?.user;
+          const context = await sdk.context.catch(() => null);
+          const contextUser = context?.user;
 
           if (contextUser?.fid) {
             mini = true;
